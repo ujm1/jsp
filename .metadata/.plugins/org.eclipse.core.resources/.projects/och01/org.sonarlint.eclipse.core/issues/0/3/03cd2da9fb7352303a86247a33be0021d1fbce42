@@ -1,0 +1,15 @@
+
+n
+java:S1161":Add the "@Override" annotation above this method signatureb e194e70fa88fb46dba684dafa1710d2ah
+}
+java:S1128"BRemove this unused import 'jakarta.servlet.annotation.WebServlet'.8›‹Æ€Ñ1b a1da2786633ef864f88c7baf7bd5fe2fh
+2
+java:S1220""Move this file to a named package.h
+v	java:S1252"<This block of commented-out lines of code should be removed.8Áÿü€Ñ1b 8161aaa5c9e5a31a48d43e072c2d338ah
+f
+java:S1135"2Complete the task associated to this TODO comment.b c4f57efa199bc27c4da51b24ff6ab91fh
+e	java:S106"+Replace this use of System.out by a logger.8»ò—€Ñ1b bb1c3f2ea781263d3a2bb92b06a2061fh
+f
+java:S1135"2Complete the task associated to this TODO comment.b 36364ec9aa2f0995d283c1c6a92d2e5ch
+e	java:S106("+Replace this use of System.out by a logger.8›‹Æ€Ñ1b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106!"+Replace this use of System.out by a logger.8ÿ¢Ï€Ñ1b bb1c3f2ea781263d3a2bb92b06a2061fh

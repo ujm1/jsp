@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function chk() {
+		if(!frm.num1.value) {alert('숫자를 입력하세요'); 
+		frm.num1.focus(); return  false;}
+		if(!isNaN.num1.value) {alert('숫자가 아닙니다'); 
+		frm.num1.focus(); frm.num1.value=""; return  false;}
+		if(!frm.num2.value) {alert('숫자를 입력하세요'); 
+		frm.num2.focus(); return  false;}
+		if(!isNaN.num2.value) {alert('숫자가 아닙니다'); 
+		frm.num2.focus(); frm.num2.value=""; return  false;}
+		return true;
+	}
+</script>
+
+</head>
+<body>
+	<h1>연산할 두 숫자를 입력하세요</h1>
+	<form action="Num2" name="frm" onsubmit="return chk()">
+		첫번째 숫자:<input tpe="text" name="num1"><p></p>
+		두번째 숫자:<input type="text" name="num2"><p></p>
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>
