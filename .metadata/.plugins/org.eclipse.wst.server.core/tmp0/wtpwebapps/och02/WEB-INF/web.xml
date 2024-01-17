@@ -49,4 +49,14 @@
     <servlet-name>Num2</servlet-name>
     <url-pattern>/Num2</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Person</display-name>
+    <servlet-name>Person</servlet-name>
+    <servlet-class>och02.Person</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Person</servlet-name>
+    <url-pattern>/Person</url-pattern>
+  </servlet-mapping>
 </web-app>

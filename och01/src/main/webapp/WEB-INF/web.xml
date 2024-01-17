@@ -29,4 +29,14 @@
     <servlet-name>GuGu</servlet-name>
     <url-pattern>/GuGu</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Board</display-name>
+    <servlet-name>Board</servlet-name>
+    <servlet-class>Board</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Board</servlet-name>
+    <url-pattern>/Board</url-pattern>
+  </servlet-mapping>
 </web-app>

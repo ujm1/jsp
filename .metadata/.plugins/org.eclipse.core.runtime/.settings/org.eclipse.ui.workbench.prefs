@@ -20,6 +20,7 @@ org.eclipse.jface.textfont=1|MesloLGS Nerd Font|12.0|0|WINDOWS|1|-16|0|0|0|400|0
 org.eclipse.mylyn.wikitext.ui.presentation.textFont=1|MesloLGS Nerd Font|12.0|0|WINDOWS|1|-16|0|0|0|400|0|0|0|0|3|2|1|50|MesloLGS Nerd Font;
 org.eclipse.pde.internal.ui.compare.ManifestContentMergeViewer=1|MesloLGS Nerd Font|12.0|0|WINDOWS|1|-16|0|0|0|400|0|0|0|0|3|2|1|50|MesloLGS Nerd Font;
 org.eclipse.pde.internal.ui.compare.PluginContentMergeViewer=1|MesloLGS Nerd Font|12.0|0|WINDOWS|1|-16|0|0|0|400|0|0|0|0|3|2|1|50|MesloLGS Nerd Font;
+org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands/>
 org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_BG_END=41,41,41
 org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_BG_START=36,36,36
 org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR=0,1,2

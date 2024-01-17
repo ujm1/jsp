@@ -12,14 +12,14 @@
 		<tr><td>이름</td> <td><input type="text" name="name"></td></tr>
 		<tr><td>아이디</td> <td><input type="text" name="id"></td></tr>
 		<tr><td>암호</td> <td><input type="text" name="password"></td></tr>
-		<tr><td>성별</td> 
+		<tr><td>성별</td>          <!--라디오:하나만 체크-->
 		<td>남자<input type="radio" name="gender" checked="checked"
 		value="남자"><br>
 			여자<input type="radio" name="gender"
-		value="여자"></td>
+		value="여자"></td> 
 		</tr>
 		
-		<tr> <td>메일 수신</td>
+		<tr> <td>메일 수신</td> <!--체크:다중체크-->
 			<td>공지 <input type="checkbox" name="notice" value="공지"><br>
 				광고<input type="checkbox" name="notice" value="광고"><br>
 				배송<input type="checkbox" name="notice" value="배송"><br>
@@ -27,7 +27,7 @@
 		</tr>
 		<tr>
 			<td>직업</td>
-			<td><select name="job">
+			<td><select name="job">       <!--셀렉트 옵션:숨김-->
 					<option value="가수">가수</option>
 					<option value="장군" selected="selected">장군</option>
 					<option value="공무원">공무원</option>
