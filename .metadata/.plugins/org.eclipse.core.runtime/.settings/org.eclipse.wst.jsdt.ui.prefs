@@ -1,5 +1,8 @@
+closeBraces=false
 eclipse.preferences.version=1
 fontPropagated=true
+formatter_profile=org.eclipse.wst.jsdt.ui.default.eclipse_profile
+formatter_settings_version=11
 java_bracket=249,249,245
 java_comment_task_tag=130,116,102
 java_default=249,249,245
@@ -16,6 +19,8 @@ java_string=235,223,145
 org.eclipse.wst.jsdt.ui.editor.tab.width=
 org.eclipse.wst.jsdt.ui.formatterprofiles.version=11
 org.eclipse.wst.jsdt.ui.javadoclocations.migrated=true
+org.eclipse.wst.jsdt.ui.text.code_templates_migrated=true
+org.eclipse.wst.jsdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 org.eclipse.wst.jsdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 org.eclipse.wst.jsdt.ui.text.templates_migrated=true
 proposalOrderMigrated=true
