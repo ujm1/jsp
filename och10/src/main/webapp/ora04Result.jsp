@@ -18,8 +18,8 @@ Dept dept=(Dept)request.getAttribute("DEPT");
 
 	
 <h2>el 표기법 부서정보</h2>
-부서코드:${dept.getDeptno} <p>
-부서명:${dept.getDname} <p>
-근무지:${dept.getLoc} <p>
+부서코드:${dept.deptno} <p>
+부서명:${dept.dname} <p>
+근무지:${dept.loc} <p>
 </body>
 </html>

@@ -1,4 +1,4 @@
-error
+
 <%@page import="com.oracle.wls.shaded.org.apache.bcel.generic.LLOAD"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
