@@ -143,10 +143,16 @@
       <Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och01" path="/och01" reloadable="true" source="org.eclipse.jst.jee.server:och01"/><Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och02" path="/och02" reloadable="true" source="org.eclipse.jst.jee.server:och02"/><Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och03" path="/och03" reloadable="true" source="org.eclipse.jst.jee.server:och03"/><Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och04" path="/och04" reloadable="true" source="org.eclipse.jst.jee.server:och04"/><Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och05" path="/och05" reloadable="true" source="org.eclipse.jst.jee.server:och05"/><Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och06" path="/och06" reloadable="true" source="org.eclipse.jst.jee.server:och06"/><Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och07" path="/och07" reloadable="true" source="org.eclipse.jst.jee.server:och07"/><Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och08" path="/och08" reloadable="true" source="org.eclipse.jst.jee.server:och08"/><Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och10" path="/och10" reloadable="true" source="org.eclipse.jst.jee.server:och10">
   <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="50" maxIdle="10" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
 
-  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="100" maxIdle="10" name="jdbc/MySql" password="mysql80" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/scottdb?serverTimezone=UTC" username="root"/>
+  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="100" maxIdle="10" name="jdbc/MySql" password="mysql80@" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/scottdb?serverTimezone=UTC" username="root"/>
 
 
-</Context></Host>
+</Context><Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och11" path="/och11" reloadable="true" source="org.eclipse.jst.jee.server:och11">
+  <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="50" maxIdle="10" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
+
+  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="100" maxIdle="10" name="jdbc/MySql" password="mysql80@" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/scottdb?serverTimezone=UTC" username="root"/>
+
+
+</Context><Context docBase="C:\jsp\source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och12" path="/och12" reloadable="true" source="org.eclipse.jst.jee.server:och12"/></Host>
     </Engine>
   </Service>
 </Server>
