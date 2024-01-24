@@ -6,13 +6,22 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	function chk() {
+	function chk() {//비밀번호 확인
 		if (frm.passwd.value != frm.passwd2.value) {
 			alert("암호가 다릅니다");
 			frm.passwd.focus();
 			return false;
 		}
 		return true;
+	}
+	function winop() {//아이디 체크 누를 시 
+		if(!frm.id.value) {
+			alert("id를 입력하고 사용하세요");
+			frm.id.focus();
+			return false;
+		}
+		window.open("confirmId.jsp?id="+frm.id.value, "kkk", "width=300 height=300");
+					//윈도우 띄우며 이 페이지로 이동
 	}
 </script>
 </head>
@@ -47,7 +56,7 @@
 			<tr>
 				<td>전화번호</td>
 				<td><input type="tel" name="tel" required="required"
-					pattern="\d{2,3}-d{3,4}-d{4}"
+					pattern="\d{2,3}-\d{3,4}-\d{4}"
 				
 					placeholder="010-xxxx-xxxx"
 					title="2,3자리-3,4자리-4자리"></td>

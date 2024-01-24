@@ -15,7 +15,7 @@
 	MemberDao md = MemberDao.getInstance();
 	//싱글턴 이용. memberDao 만들어 쓰는건 똑같고.. 단지 싱글턴으로 쓰느냐 아니냐의 차이
 
-	int result = md.insert(member2);
+	int result = md.check(id, passwd);
 	//preparedStatement사용
 	if (result == 1) {
 		session.setAttribute("id", id);
@@ -24,7 +24,7 @@
 	} else if (result == 0) {
 	%>
 	<script type="text/javascript">
-		alert("암호를 알 수 없습니다");
+		alert("암호가 틀렸습니다");
 		history.go(-1);
 	</script>
 
@@ -34,7 +34,7 @@
 	} else {
 	%>
 	<script type="text/javascript">
-		alert("user 미존재 -1");
+		alert("아이디가 없습니다");
 		history.go(-1);
 	</script>
 

@@ -9,6 +9,7 @@ public class Member2 {
 	private String address;
 	private String tel;
 	
+	
 	public String getId() {
 		return id;
 	}
@@ -47,3 +48,4 @@ public class Member2 {
 	}
 	private Date reg_date;
 }
+

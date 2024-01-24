@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%-- <%@ include file="memberCheck.jsp"%> --%>
+<%@ include file="memberCheck.jsp"%>
 <!-- 먼저 여기부터 간다 -->
 <!DOCTYPE html>
 <html>

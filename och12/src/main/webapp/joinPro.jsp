@@ -13,7 +13,7 @@
 <jsp:setProperty property="*" name="member2"/>
 <!-- 필드명이 똑같을 때 *... -->
 <%
-	MemberDao md=MemberDao.getInstance();
+	MemberDao md=MemberDao.getInstance(); //new로 인스턴스(객체, 메모리, 고유 값을 가짐) 새로 만드는게 아니라
 	int result=md.insert(member2);
 	if(result>0) {
 %>		
