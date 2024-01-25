@@ -9,9 +9,9 @@ public class Board {
 	private String content;
 	private String email;
 	private int readcount;
-	private String apsswd;
+	private String passwd;
 	private int ref;
-	private int re_stop;
+	private int re_step;
 	private int re_level;
 	private String ip;
 	private Date reg_date;
@@ -52,11 +52,11 @@ public class Board {
 	public void setReadcount(int readcount) {
 		this.readcount = readcount;
 	}
-	public String getApsswd() {
-		return apsswd;
+	public String getPasswd() {
+		return passwd;
 	}
-	public void setApsswd(String apsswd) {
-		this.apsswd = apsswd;
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
 	}
 	public int getRef() {
 		return ref;
@@ -64,11 +64,11 @@ public class Board {
 	public void setRef(int ref) {
 		this.ref = ref;
 	}
-	public int getRe_stop() {
-		return re_stop;
+	public int getRe_step() {
+		return re_step;
 	}
-	public void setRe_stop(int re_stop) {
-		this.re_stop = re_stop;
+	public void setRe_step(int re_stop) {
+		this.re_step = re_stop;
 	}
 	public int getRe_level() {
 		return re_level;

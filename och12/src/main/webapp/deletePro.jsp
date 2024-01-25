@@ -1,12 +1,13 @@
 <%@page import="och12.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ include file="memberCheck.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%	String id=request.getParameter("id");%>
+
 </head>
 <body>
 	<%
@@ -14,7 +15,8 @@
 	MemberDao md = MemberDao.getInstance();
 	System.out.println("DeletePro id:" + id);
 
-	int result = md.delete(id, passwd);
+	int result = md.delete(id, passwd); 
+
 	if (result == 1) {
 		session.invalidate();
 	%>

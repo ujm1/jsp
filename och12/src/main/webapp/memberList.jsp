@@ -21,7 +21,7 @@ td {
 <body bgcolor="yellow">
 	<%
 	MemberDao md=MemberDao.getInstance();
-	List<Member2> list=md.list();
+	List<Member2> list=md.list(); 
 	if(list==null) {out.print("회원이 없습니다");
 	} else {
 	
