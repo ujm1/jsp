@@ -1,4 +1,4 @@
 darkestApplied=true
 eclipse.preferences.version=1
 enableddarkestdark=true
-themeid=com.github.eclipseuitheme.themes.moonrise-ui
+themeid=org.eclipse.e4.ui.css.theme.e4_dark

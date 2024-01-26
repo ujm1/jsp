@@ -49,12 +49,13 @@ table {
 			<td colspan="2"> <!--col(열) 2개를 합쳐 1개로 만들고 그 안에 아래의 버튼들 넣는 것 -->
 			<input type="button" value="수정"
 				onclick="location.href='updateForm.do?num=${board.num}&pageNum=${pageNum}'">
-				<input type="button" value="답변작성"
+				<input type="button" value="답변작성"	
 				onclick="location.href='writeForm.do?num=${board.num}&pageNum=${pageNum}'">
 				<input type="button" value="삭제"
 				onclick="location.href='deleteForm.do?num=${board.num}&pageNum=${pageNum}'">
 				<input type="button" value="목록"
 				onclick="location.href='list.do?pageNum=${pageNum}'">
+				<!-- num, pageNum을 전페이지에서 request.setAttribute로 보내기에 가능 -->
 			</td>
 		</tr>
 	</table>

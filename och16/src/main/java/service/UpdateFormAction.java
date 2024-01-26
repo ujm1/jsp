@@ -17,6 +17,7 @@ public class UpdateFormAction implements CommandProcess {
 
 		int num = Integer.parseInt(request.getParameter("num"));
 		String pageNum = request.getParameter("pageNum");
+		// 여기서 쓸 num과 pageNum
 		try {
 			BoardDao bd = BoardDao.getInstance();
 			Board board = bd.select(num);

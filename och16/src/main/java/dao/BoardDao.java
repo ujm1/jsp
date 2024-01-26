@@ -77,9 +77,9 @@ public class BoardDao {
 		conn = null;
 		pstmt = null;
 		rs = null;
-	
-		String sql = "select * from (select rownum rn, a.*"
-				+ "from (select * from board order by ref desc, re_step) a)" + "where rn between ? and ?";
+
+		String sql = "select * from (select rownum rn, a.*" + "from (select * from board order by ref desc, re_step) a)"
+				+ "where rn between ? and ?";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -87,48 +87,185 @@ public class BoardDao {
 			pstmt.setInt(2, endRow);
 			rs = pstmt.executeQuery();
 
-			while(rs.next()) {
+			while (rs.next()) {
 				Board board = new Board();
-						board.setNum(rs.getInt("num"));
-						board.setWriter(rs.getString("writer"));
-						board.setSubject(rs.getString("subject"));
-						board.setContent(rs.getString("content"));
-						board.setEmail(rs.getString("email"));
-						board.setReadcount(rs.getInt("readcount"));
-						board.setPasswd(rs.getString("passwd"));
-						board.setRef(rs.getInt("ref"));
-						board.setRe_step(rs.getInt("re_step"));
-						board.setRe_level(rs.getInt("re_level"));
-						board.setIp(rs.getString("ip"));
-						board.setReg_date(rs.getDate("reg_date"));
-						list.add(board);
-				//passwd, content 는..?
+				board.setNum(rs.getInt("num"));
+				board.setWriter(rs.getString("writer"));
+				board.setSubject(rs.getString("subject"));
+				board.setContent(rs.getString("content"));
+				board.setEmail(rs.getString("email"));
+				board.setReadcount(rs.getInt("readcount"));
+				board.setPasswd(rs.getString("passwd"));
+				board.setRef(rs.getInt("ref"));
+				board.setRe_step(rs.getInt("re_step"));
+				board.setRe_level(rs.getInt("re_level"));
+				board.setIp(rs.getString("ip"));
+				board.setReg_date(rs.getDate("reg_date"));
+				list.add(board);
+				// passwd, content 는..?
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(rs!=null) {rs.close();}
-				if(pstmt!=null) {pstmt.close();}
-				if(conn!=null) {conn.close();}
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
 			} catch (SQLException e2) {
 				e2.printStackTrace();
 			}
 		}
 		return list;
 	}
-	
-	
-	public int readCount(int num) {
-		
-		return num;
-		
-	}
-	
-	public Board select(int num) {
-		Board board=new Board();
-		return board;
-		
+
+	public void readCount(int num) {
+		conn = null;
+		pstmt = null;
+		String sql = "update board set readcount=readcount+1 where num=?";
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
+		}
 	}
 
+	public Board select(int num) {
+		// prepare로 해도 됨 -> 이후 연습용으로 수정
+		conn = null;
+		stmt = null;
+		rs = null;
+		String sql = "select * from board where num=" + num;
+		Board board = new Board();
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				board.setNum(rs.getInt("num"));
+				board.setWriter(rs.getString("writer"));
+				board.setSubject(rs.getString("subject"));
+				board.setContent(rs.getString("content"));
+				board.setEmail(rs.getString("email"));
+				board.setReadcount(rs.getInt("readcount"));
+				board.setIp(rs.getString("ip"));
+				board.setReg_date(rs.getDate("reg_date"));
+				board.setRef(rs.getInt("ref"));
+				board.setRe_level(rs.getInt("re_level"));
+				board.setRe_step(rs.getInt("re_step"));
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (stmt != null)
+					stmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
+
+		}
+		return board;
+
+	}
+
+	/* try-catch 안에 또 try-catch를 두지 않기 때문 */
+	public int update(Board board) throws SQLException {
+		// 수정할 객체를 가져온 상태.
+		int result = 0;
+		conn = null;
+		pstmt = null;
+		String sql = "update board set subject=?, writer=?, email=?," 
+		+ "password=?, content=?, ip=?, where num=?";
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getSubject());
+			pstmt.setString(2, board.getWriter());
+			pstmt.setString(3, board.getEmail());
+			pstmt.setString(4, board.getPasswd());
+			pstmt.setString(5, board.getContent());
+			pstmt.setString(6, board.getIp());
+			pstmt.setInt(7, board.getNum());
+			
+			result = pstmt.executeUpdate();
+			//업데이트하며, 업데이트한 row의 개수 가져옴
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(pstmt!=null)pstmt.close();
+			if(conn!=null)conn.close();
+			
+		}return result;
+		//db 바꾸고 결과표현숫자만 보냄
+	}
+	
+	public int insert(Board board) throws SQLException {
+			int num=board.getNum();
+			conn=null;
+			pstmt=null;
+			int result=0;
+			rs=null;
+			String sql1="select nvl(max(num),0) from board";
+			//NVL : 못가져왔으면 0으로 처리?
+			String sql="insert into board values(?,?,?,?,?,?,?,?,?,?,?,sysdate)";
+			try {
+				conn=getConnection();
+				pstmt=conn.prepareStatement(sql1);
+				rs=pstmt.executeQuery();
+				rs.next();
+				//key인 num 1씩 증가, mysql auto_increment 또는 oracle sequence
+				//max대신 sequence를 사용 : values(시퀀스명(board_seq).nextval,?,?...)
+				int number=rs.getInt(1)+1;
+				rs.close();
+				pstmt.close();
+			
+				if(num!=0) {} //댓글-->sql2
+				if(num==0) {
+					board.setRef(number);	//신규글일때 num과 Ref 맞춰줌
+					pstmt=conn.prepareStatement(sql);
+					pstmt.setInt(1, number);
+					pstmt.setString(2, board.getWriter());
+					pstmt.setString(3, board.getSubject());
+					pstmt.setString(4, board.getContent());
+					pstmt.setString(5, board.getEmail());
+					pstmt.setInt(6,board.getReadcount());
+					pstmt.setString(7, board.getPasswd());
+					pstmt.setInt(8, board.getRef());
+					pstmt.setInt(9,board.getRe_step());
+					pstmt.setInt(10, board.getRe_level());
+					pstmt.setString(11,board.getIp());
+					result=pstmt.executeUpdate();
+					
+				}
+			} catch (Exception e) {
+			
+				System.out.println(e.getMessage());}
+		finally {
+			
+		}
+		
+	}
 }

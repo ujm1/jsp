@@ -7,10 +7,11 @@
 <title>게시판 수정</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body>			<!-- ->service.UpdateProAction-->
 	<form action="updatePro.do" method="post">
 		<input type="hidden" name="num" value="${board.num}"> <input
 			type="hidden" name="pageNum" value="${pageNum}">
+			<!-- request.setAttribute로 board, pageNum 보냈기떄문  -->
 		<table border="1">
 			<caption>
 				<h2>게시판 수정</h2>
@@ -37,7 +38,7 @@
 			<tr>
 				<td>암호</td>
 				<td><input type="password" name="passwd" required="required"
-					value="${board.password}"></td>
+					value="${board.passwd}"></td>
 			</tr>
 			<tr>
 				<td>내용</td>

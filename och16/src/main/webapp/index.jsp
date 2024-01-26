@@ -8,8 +8,10 @@
 </head>
 <body>
 <script type="text/javascript">
-
-	location.href="list.do"; //command.property -> service.ListAction
+ 
+	location.href="list.do"; 
+	//command.property -> list.do
+	//	->service.ListAction 자바 (-> listForm.jsp)
 </script>
 </body>
 </html>

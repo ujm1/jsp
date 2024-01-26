@@ -20,7 +20,7 @@ public class ContentAction implements CommandProcess {
 
 		try { 
 			BoardDao bd = BoardDao.getInstance();
-			bd.readCount(num);
+			bd.readCount(num); //그냥 동작만 수행->void로
 			Board board = bd.select(num);
 			request.setAttribute("num", num);
 			request.setAttribute("pageNum", pageNum);

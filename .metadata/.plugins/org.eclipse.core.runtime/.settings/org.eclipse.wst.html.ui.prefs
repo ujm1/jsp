@@ -1,23 +1,9 @@
 autoProposeCode=<\=qwertyuiopasdfghjklzxcvbnm
 autoProposeDelay=1
 closeBrackets=false
-commentBorder=\#827466 | \#34352E | false | false | false | false
-commentText=\#827466 | \#34352E | false | false | false | false
-declBoder=\#71E1F1 | \#34352E | false | false | false | false
-doctypeExternalId=\#71E1F1 | \#34352E | false | false | false | false
-doctypeExternalPubref=\#71E1F1 | \#34352E | false | false | false | false
-doctypeExtrenalSysref=\#71E1F1 | \#34352E | false | false | false | false
-doctypeName=\#71E1F1 | \#34352E | false | false | false | false
 eclipse.preferences.version=1
-entityReference=\#FF3D83 | \#34352E | false | false | false | false
 html_content_assist_default_page_sort_order=org.eclipse.wst.html.ui.proposalCategory.htmlTags\u0000org.eclipse.wst.html.ui.proposalCategory.generic\u0000org.eclipse.wst.css.ui.proposalCategory.css\u0000org.eclipse.wst.html.ui.proposalCategory.htmlTemplates\u0000org.eclipse.wst.css.ui.proposalCategory.cssTemplates\u0000org.eclipse.wst.html.ui.proposalCategory.htmlAttributeValues\u0000org.eclipse.wst.jsdt.web.ui.ContentAssistProposals\u0000
 html_content_assist_display_on_default_page=
 html_content_assist_own_page_sort_order=org.eclipse.wst.html.ui.proposalCategory.htmlTemplates\u0000org.eclipse.wst.css.ui.proposalCategory.cssTemplates\u0000org.eclipse.wst.html.ui.proposalCategory.htmlTags\u0000org.eclipse.wst.css.ui.proposalCategory.css\u0000org.eclipse.wst.html.ui.proposalCategory.generic\u0000
 newFileTemplateName=New HTML File (5)
 org.eclipse.wst.sse.ui.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="html_all" deleted\="false" description\="nbsp" enabled\="true" name\="nbsp">%nbsp;</template><template autoinsert\="true" context\="html_all" deleted\="false" description\="//" enabled\="true" name\="//">&lt;\!--${cursor} --&gt;</template><template autoinsert\="true" context\="html_all" deleted\="false" description\="ll " enabled\="true" name\="ll">&lt;\!--${cursor} --&gt;</template><template autoinsert\="true" context\="html_all" deleted\="false" description\=";;" enabled\="true" name\=";;">&lt;\!--${cursor} --&gt;</template></templates>
-tagAttributeEquals=\#F9F9F5 | \#34352E | null | null | null | null
-tagAttributeName=\#F9F9F5 | \#34352E | false | false | false | false
-tagAttributeValue=\#EBDF91 | \#34352E | false | false | false | false
-tagBorder=\#FFA542 | \#34352E | false | false | false | false
-tagName=\#F9F9F5 | \#34352E | false | false | false | false
-xmlContent=\#F9F9F5 | \#34352E | null | null | null | null

@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class ListAction implements CommandProcess {
 	//fasade 패턴
-	@Override
+	@Override			//index->o->listForm.jsp
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("ListAction Service start...");

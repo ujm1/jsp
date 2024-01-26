@@ -27,13 +27,18 @@ public class Controller extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		String props = config.getInitParameter("config");
 		System.out.println("1.init String props->" + props);
-
+			//props : /WEB-INF/command.properties
+		
 		Properties pr = new Properties();
 		FileInputStream f = null;
 
 		try {
 			String configFilePath = config.getServletContext().getRealPath(props);
 			System.out.println("2.init String configFilePath->" + configFilePath);
+			/* configFilePath : C:\jsp\source\.metadata\.plugins
+			 * \org.eclipse.wst.server.core\tmp0\wtpwebapps
+			 * \och16\WEB-INF\command.properties  */
+			
 			f = new FileInputStream(configFilePath);
 			pr.load(f); // 메모리에 적재
 		} catch (FileNotFoundException e) {
@@ -54,7 +59,10 @@ public class Controller extends HttpServlet {
 			String className = pr.getProperty(command);
 			System.out.println("3.init command->" + command);
 			System.out.println("4.init className->" + className);
-
+			/* 여기서 list.do - service.ListAction,
+			 * updateForm.do-service.UpdateFormAction,
+			 * content.do-service.ContentAction, 등 가져옴 */
+			
 			try {
 				// ListAction la = new ListAction();
 				// 소멸 Class
@@ -65,7 +73,7 @@ public class Controller extends HttpServlet {
 				// content.do service.ContentAction
 				Class<?> commandClass = Class.forName(className);//해당 문자열을 클래스로 만든다.
 				CommandProcess commandInstance = (CommandProcess) commandClass.getDeclaredConstructor().newInstance();
-
+				//적당히 넘어감
 				commandMap.put(command, commandInstance);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -92,15 +100,20 @@ public class Controller extends HttpServlet {
 		CommandProcess com=null;
 		String command=request.getRequestURI();
 		System.out.println("1.requestServletPro command->"+command);
+		//command->/och16/list.do
 		command=command.substring(request.getContextPath().length());
 		System.out.println("2.requestServeletPro command substring->"+ command);
-		
+		//command substring->/list.do. 즉 앞의 /och16/을 없앰
 		try {
 			com=(CommandProcess) commandMap.get(command);
 			System.out.println("3.requestServletPro command->"+command);
+			//command->/list.do
 			System.out.println("4.requestServletPro com->"+com);
-			view=com.requestPro(request, response); //.....
+			//com->service.ListAction@6568192e
+			view=com.requestPro(request, response); 
+			//Content Action에 따라 ListAction Service start...(실제 동작)
 			System.out.println("5.requestServletPro view->"+view);
+			//view->listForm.jsp
 			
 		} catch (Exception e) {
 			throw new ServletException(e);
