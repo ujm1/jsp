@@ -16,17 +16,20 @@ public class UpdateProAction implements CommandProcess {
 		System.out.println("UpdateProAcion 스타트");
 		// 1. num , pageNum, writer ,  email , subject , passwd , content   Get
 		request.setCharacterEncoding("utf-8");
-		int pageNum=Integer.parseInt(request.getParameter("pageNum")); // 체크
+		String pageNum=request.getParameter("pageNum");
+		//int 가 아닌 string...
 		
 		int num=Integer.parseInt(request.getParameter("num"));
-
 		String writer=request.getParameter("writer");
 		String email=request.getParameter("email");
 		String subject=request.getParameter("subject");
 		String passwd=request.getParameter("passwd");
 		String content=request.getParameter("content");
-		
-				// 2. Board board 생성하고 DTO Value Setting
+		String ip=request.getRemoteAddr();
+		//JAVA, jsp 에서 클라이언트의 ip주소를 얻기 위해 사용하는 코드
+					
+			
+		// 2. Board board 생성하고 DTO Value Setting
 		try {
 			Board board=new Board();
 			board.setNum(num);
@@ -35,9 +38,7 @@ public class UpdateProAction implements CommandProcess {
 			board.setSubject(subject);
 			board.setPasswd(passwd);
 			board.setContent(content);
-			board.setIp(request.getRemoteAddr()); //ip는 위에서 가져오지 않음
-			//JAVA, jsp 에서 클라이언트의 ip주소를 얻기 위해 사용하는 코드는 request.getRemoteAddr() 이다.
-			
+			board.setIp(ip); 
 			
 			// 3. BoardDao bd Instance
 			BoardDao bd=BoardDao.getInstance();

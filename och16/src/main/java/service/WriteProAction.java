@@ -42,7 +42,7 @@ public class WriteProAction implements CommandProcess {
 		        request.setAttribute("result", result);
 		        request.setAttribute("pageNum", pageNum);
 
-		        return "writePro.jsp";
+		
 
 		
 	} catch (Exception e) {
@@ -50,7 +50,7 @@ public class WriteProAction implements CommandProcess {
 	}
 		
 
-		
+    return "writePro.jsp";
 	}
 
 }

@@ -175,7 +175,7 @@ public class BoardDao {
 			System.out.println(e.getMessage());
 		} finally {
 			try {
-				if (rs != null)
+				if (rs !=null)
 					rs.close();
 				if (stmt != null)
 					stmt.close();
@@ -197,7 +197,7 @@ public class BoardDao {
 		conn = null;
 		pstmt = null;
 		String sql = "update board set subject=?, writer=?, email=?," 
-		+ "password=?, content=?, ip=?, where num=?";
+		+ "passwd=?, content=?, ip=? where num=?";
 
 		try {
 			conn = getConnection();
@@ -231,6 +231,7 @@ public class BoardDao {
 			String sql1="select nvl(max(num),0) from board";
 			//NVL : 못가져왔으면 0으로 처리?
 			String sql="insert into board values(?,?,?,?,?,?,?,?,?,?,?,sysdate)";
+			String sql2="update board set re_step=re_step+1 where ref=? and re_step>?";
 			try {
 				conn=getConnection();
 				pstmt=conn.prepareStatement(sql1);
@@ -242,7 +243,23 @@ public class BoardDao {
 				rs.close();
 				pstmt.close();
 			
-				if(num!=0) {} //댓글-->sql2
+				if(num!=0) { //댓글
+					System.out.println("boardDao insert 댓글 sql2:"+sql2);
+					System.out.println("boardDao insert 댓글 board.getRef():"+board.getRef());
+					System.out.println("boardDao insert 댓글 board.getRe_step():"+board.getRe_step());
+					pstmt=conn.prepareStatement(sql2);
+					pstmt.setInt(1, board.getRef());
+					pstmt.setInt(2, board.getRe_step());
+					pstmt.executeUpdate();
+					pstmt.close();
+					
+					//댓글 관련 정보
+					board.setRe_step(board.getRe_step()+1);
+					board.setRe_level(board.getRe_level()+1);
+				
+				
+				
+				} //댓글-->sql2
 				if(num==0) {
 					board.setRef(number);	//신규글일때 num과 Ref 맞춰줌
 					pstmt=conn.prepareStatement(sql);
@@ -264,8 +281,42 @@ public class BoardDao {
 			
 				System.out.println(e.getMessage());}
 		finally {
-			
+			if(rs!=null) rs.close();
+			if(rs!=null) pstmt.close();
+			if(rs!=null) conn.close();
 		}
-		
+			return result;
+	}
+	
+	public int delete(int num, String passwd) throws SQLException {
+		conn = null;	
+		pstmt= null; 
+		int result = 0;		    
+		rs = null;
+		String sql1 = "select passwd from board where num=?";
+		String sql="delete from board where num=?";
+		try {
+			String dbPasswd = "";
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql1);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				dbPasswd = rs.getString(1); 
+				if (dbPasswd.equals(passwd)) {
+					rs.close();  
+					pstmt.close();
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, num);
+					result = pstmt.executeUpdate();
+				} else result = 0;
+			} else result = -1;
+		} catch(Exception e) {	
+			System.out.println(e.getMessage()); 
+		} finally {
+			if (pstmt != null) pstmt.close();
+			if (conn !=null) conn.close();
+		}
+		return result;
 	}
 }

@@ -20,10 +20,10 @@
 			</caption>
 			<tr>
 				<td>제목</td>
-				<td><c:if test="${num>0}">
+				<td><c:if test="${num>0}"><!-- 댓글 -->
 						<input type="text" name="subject" value="[답변]" required="required">
 
-					</c:if> <c:if test="${num==0}">
+					</c:if> <c:if test="${num==0}"><!-- 최초글쓰기 -->
 						<input type="text" name="subject" required="required">
 					</c:if></td>
 			</tr>

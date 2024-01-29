@@ -1,3 +1,4 @@
+SCRIPT_AREA_BORDER=\#F9F9F5 | \#34352E | false | false | false | false
 commentBorder=\#827466 | \#34352E | false | false | false | false
 commentText=\#827466 | \#34352E | false | false | false | false
 eclipse.preferences.version=1
@@ -7,4 +8,10 @@ jsp_content_assist_own_page_sort_order=org.eclipse.jst.jsp.ui.proposalCategory.j
 newFileTemplateName=New JSP File (html 5)
 newTagFileTemplateName=New Tag File
 org.eclipse.wst.sse.ui.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="jsp_all" deleted\="false" description\="ll" enabled\="true" name\="ll">&lt;\!--${cursor} --&gt;</template></templates>
+overriddenByCSS=,SCRIPT_AREA_BORDER,tagAttributeEquals,tagAttributeName,tagAttributeValue,tagName,tagBorder,
+tagAttributeEquals=\#F9F9F5 | \#34352E | null | null | null | null
+tagAttributeName=\#FF3D83 | \#34352E | false | false | false | false
+tagAttributeValue=\#EBDF91 | \#34352E | false | false | false | false
+tagBorder=\#71E1F1 | \#34352E | false | false | false | false
+tagName=\#03a8d8 | null | true | false | false | false
 typingCompleteElBraces=false
