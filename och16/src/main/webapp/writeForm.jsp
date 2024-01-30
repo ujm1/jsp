@@ -39,12 +39,12 @@
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><textarea row="10" cols="30" name="content"
+				<td><textarea rows="10" cols="30" name="content"
 						required="required"></textarea></td>
 			</tr>
 			<tr>
 				<td>암호</td>
-				<td><input type="password" name="password" required="required"></td>
+				<td><input type="password" name="passwd" required="required"></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="확인"></td>

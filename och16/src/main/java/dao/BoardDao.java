@@ -258,8 +258,8 @@ public class BoardDao {
 					board.setRe_level(board.getRe_level()+1);
 				
 				
-				
-				} //댓글-->sql2
+				} 
+				//댓글-->sql2
 				if(num==0) {
 					board.setRef(number);	//신규글일때 num과 Ref 맞춰줌
 					pstmt=conn.prepareStatement(sql);
@@ -282,8 +282,8 @@ public class BoardDao {
 				System.out.println(e.getMessage());}
 		finally {
 			if(rs!=null) rs.close();
-			if(rs!=null) pstmt.close();
-			if(rs!=null) conn.close();
+			if(pstmt!=null) pstmt.close();
+			if(conn!=null) conn.close();
 		}
 			return result;
 	}

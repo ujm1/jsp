@@ -20,7 +20,6 @@ public class ListAction implements CommandProcess {
 		BoardDao bd=BoardDao.getInstance();
 		try {
 			int totCnt=bd.getTotalCnt(); 
-			request.setAttribute("totCnt", totCnt);
 			//여기까지 하면 카운트 세는거 됨, 추가로.. 
 			//페이징 작업
 			String pageNum=request.getParameter("pageNum");

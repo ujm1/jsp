@@ -19,6 +19,7 @@ public class WriteProAction implements CommandProcess {
 		request.setCharacterEncoding("utf-8");
 		String pageNum=request.getParameter("pageNum");
 		System.out.println(pageNum);
+		//2.Board board 생성하고 value set	
 		Board board=new Board();
 		
 	board.setNum(Integer.parseInt(request.getParameter("num")));
